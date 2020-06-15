@@ -63,6 +63,7 @@ module Rswag
       end
 
       def example_value(value)
+        metadata[:response][:examples] ||= {}
         metadata[:response][:examples][metadata[:description].parameterize separator: '_'] = {
           summary: metadata[:description],
           value: value
